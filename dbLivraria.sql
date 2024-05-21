@@ -17,13 +17,13 @@ email varchar(100),
 primary key(idAutor)
 );
 
-
 create table tbClientes(
 idCliente int not null auto_increment,
 nome varchar(100),
 telefone char(9),
 primary key(idCliente)
 );
+
 
 
 create table tbLivros(
@@ -36,7 +36,6 @@ primary key(idLivro),
 foreign key(idGenero) references tbGeneros(idGenero)
 );
 
-
 create table tbVendas(
 idVenda int not null auto_increment,
 data date,
@@ -45,8 +44,6 @@ idCliente int not null,
 primary key(idVenda),
 foreign key(idCliente) references tbClientes(idCliente)
 );
-
-
 
 create table tbItens_Das_Vendas(
 idVenda int not null,
@@ -123,3 +120,35 @@ select * from tbLivros;
 select * from tbVendas;
 select * from tbItens_Das_Vendas;
 select * from tbEscreve;
+
+-- Alterando registros das tabelas
+
+update tbClientes set nome = 'Delfina Delgado' where idCliente = 2;
+update tbClientes set nome = 'Arlindo Esmeraldo',
+	telefone = '9995-5278' where idCliente = 1;
+
+
+select * from tbClientes;
+
+update tbLivros set titulo = 'E Assim que acaba', preco = 39.90, estoque = 10, idGenero = 4
+	where idLivro = 1;
+
+update tbLivros set titulo = 'Inteligencia emocional', preco = 109.30, estoque = 7, idGenero = 7
+	where idLivro = 2;
+
+update tbLivros set titulo = 'O Iluminado', preco = 89.45, estoque = 3, idGenero = 2 where idLivro = 4;
+
+select * from tbLivros;
+
+--Apagando o registro da tabela
+
+delete from tbItens_Das_Vendas where idVenda = 2;
+
+delete from tbVendas where idCliente = 1;
+
+delete from tbClientes where idCliente = 1;
+
+select * from tbItens_Das_Vendas;
+select * from tbVendas;
+select * from tbClientes
+

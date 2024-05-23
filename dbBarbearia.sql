@@ -33,3 +33,15 @@ select codProd as 'Código',
 	descricao as 'Descrição',
 	marca as 'Marca',
 	preco as 'Preço' from tbProdutos;
+
+--colunas virtuais
+
+select codProd, descricao, marca, preco,'promoção' as 'promo'  from tbProdutos;
+select codProd, descricao,'promoção' as 'promo', marca, preco  from tbProdutos;
+select codProd as 'Código', descricao as 'Descrição','promoção' as 'promo', marca as 'Marca', 'Sim' as 'Vendido', preco as 'Preço'  from tbProdutos;
+
+-- utilizando calculos no SQL
+
+update tbProdutos set preco = preco * 1.10 where codProd = 3;
+
+select * from tbProdutos;

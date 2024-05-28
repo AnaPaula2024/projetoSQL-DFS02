@@ -25,7 +25,7 @@ descricao varchar(500),
 primary key(idReceitaMedica)
 );
 
-create table tb0onsulta(
+create table tbConsulta(
 idConsulta int not null auto_increment,
 dt_consulta datetime,
 Medico_idMedico int,

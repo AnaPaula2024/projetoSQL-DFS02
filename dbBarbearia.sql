@@ -42,6 +42,16 @@ select codProd as 'Código', descricao as 'Descrição','promoção' as 'promo',
 
 -- utilizando calculos no SQL
 
-update tbProdutos set preco = preco * 1.10 where codProd = 3;
+update tbProdutos set preco = preco * 1.10
+ -- where codProd = 3;
 
 select * from tbProdutos;
+
+select codProd * 3.141692 as 'Calculando o PI', preco * 0.90 as 'Desconto' from tbprodutos;
+
+select preco * 0.90 as 'Desconto' from tbprodutos;
+
+update tbProdutos set preco = preco * 0.80 where codProd = 1;
+
+
+	

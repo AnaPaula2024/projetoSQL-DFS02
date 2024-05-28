@@ -24,8 +24,6 @@ telefone char(9),
 primary key(idCliente)
 );
 
-
-
 create table tbLivros(
 idLivro int not null auto_increment,
 titulo varchar(100),

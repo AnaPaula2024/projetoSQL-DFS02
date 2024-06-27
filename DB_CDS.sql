@@ -5,7 +5,7 @@ create database DB_CDS;
 use DB_CDS;
 
 create table tbArtistas(
-cod_Art int not null, 
+cod_Art int not null auto_increment, 
 nome_Art varchar(100) not null unique,
 primary key(cod_Art));
 
@@ -40,37 +40,37 @@ primary key(cod_Cid),
 foreign key(sigla_Est) references tbEstados(sigla_Est));
 
 create table tbClientes(
+cod_Cli int not null auto_increment,
 nome_Cli varchar(50) not null,
 end_Cli varchar(100) not null,
 renda_Cli decimal(9,2) not null default 0 check(renda_Cli >= 0),
 sexo_Cli char(1) not null default 'F' check(sexo_Cli in('F','M')),
-cod_Cli int not null auto_increment,
 cod_Cid int not null,
 primary key(cod_Cli), 
 foreign key(cod_Cid) references tbCidades(cod_Cid));
 
 create table tbConjuge(
+codConj int not null auto_increment,
 nome_Conj varchar(50) not null,
 renda_Conj decimal(9,2) not null default 0 check(renda_Conj >= 0),
 sexo_Conj char(1) not null default 'F' check(sexo_Conj in('F','M')),
-codConj int not null auto_increment,
 cod_Cli int not null, 
 primary key(codConj),
 foreign key(cod_Cli) references tbClientes(cod_Cli));
 
 create table tbDependentes(
+cod_Dep int not null auto_increment,
 nome_Dep varchar(100) not null,
 sexo_Dep char(1) not null default 'F' check(sexo_Dep in('F','M')),
-cod_Dep int not null auto_increment,
 cod_Func int not null, 
 primary key(cod_Dep),
 foreign key(cod_Func) references tbFuncionarios(cod_Func));
 
 create table tbTitulos(
+cod_Tit int not null auto_increment,
 nome_CD varchar(50) not null unique,
 val_CD decimal(9,2) not null check(val_CD > 0),
 QTD_ESTQ int not null check(QTD_ESTQ >= 0),
-cod_Tit int not null auto_increment,
 cod_Cat int not null, 
 cod_Grav int not null,
 primary key(cod_Tit), 
@@ -78,9 +78,9 @@ foreign key(cod_Cat) references tbCategorias(cod_Cat),
 foreign key(cod_Grav) references tbGravadoras(cod_Grav));
 
 create table tbPedidos(
+num_Ped int not null auto_increment,
 data_Ped datetime not null,
 val_Ped decimal(9,2) not null default 0 check(val_Ped >= 0),
-num_Ped int not null auto_increment,
 cod_Cli int not null, 
 cod_Func int not null,
 primary key(num_Ped), 
@@ -163,12 +163,12 @@ insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(4, 'Sonia Da Silva
 
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 1, 'Tribalistas', 30.00, 1500);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Tropicalia', 50.00, 500);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 1, 'Aquele Abraço',50.00, 600);
+insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 1, 'Aquele Abraco',50.00, 600);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Refazenda', 60.00, 1000);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 3, 'Totalmente Demais', 50.00, 2000);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 3, 'Travessia', 55.00, 500);	
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Courage', 30.00, 200);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(4, 3, 'Legião Urbana', 20.00, 100);
+insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(4, 3, 'Legiao Urbana', 20.00, 100);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(3, 2, 'The Beatles', 30.00, 300);
 insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(4, 1, 'Rita Lee', 30.00, 500);
 
@@ -226,8 +226,48 @@ select * from tbTitulos_pedido;
 select * from tbTitulos_Artista;
 
 
+Laboratório
+
+ Utilizando o banco de dados DB_CDS: 
+
+
+ 1.Selecione o nome dos CDs e o nome da gravadora de cada CD.
+
+
+select nome_CD as 'Nome do CD', nome_Grav as 'Nome da gravadora' from tbTitulos as tit inner join tbGravadoras as grav on tit.cod_Tit = grav.cod_Grav;
 
 
 
+ 2.Selecione o nome dos CDs e o nome da categoria de cada CD. 
 
+
+
+ 3.Selecione o nome dos CDs, o nome das gravadoras de cada CD e o nome da categoria de cada CD.
+
+
+
+ 4.Selecione  o  nome  dos  clientes  e  os  títulos  dos  CDs vendidos  em  cada  pedido  que  o cliente fez.
+
+
+
+ 5.Selecione  o  nome  do  funcionário,  número,  data  e  valor   dos  pedidos  que  este funcionário registrou,
+  além do nome do cliente que está fazendo o pedido.
+
+
+
+6.Selecione  o  nome  dos  funcionários  e  o  nome  de  todos  os  dependentes  de  cada funcionário. 
+
+
+
+7.Selecione o nome dos clientes e o nome dos cônjuges de cada cliente.  
+
+
+
+8.Selecione  o  nome  de  todos  os  clientes.  Se  estes  possuem  cônjuges,  mostrar  os  nomes 
+de seus cônjuges também.
+
+
+
+9.Selecione  nome  do  cliente,  nome  do  cônjuge,  número do  pedido  que  cada  cliente  fez, 
+valor de cada pedido que cada cliente fez e código do funcionário que atendeu a cada pedido. 
 

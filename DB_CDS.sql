@@ -95,6 +95,7 @@ cod_Tit int not null,
 foreign key(num_Ped) references tbPedidos(num_Ped),
 foreign key(cod_Tit) references tbTitulos(cod_Tit));
 
+
 create table tbTitulos_Artista(
 cod_Tit int not null, 
 cod_Art int not null, 
@@ -106,14 +107,22 @@ insert into tbArtistas(nome_Art)values('Marisa Monte');
 insert into tbArtistas(nome_Art)values('Gilberto Gil');
 insert into tbArtistas(nome_Art)values('Caetano Veloso');
 insert into tbArtistas(nome_Art)values('Milton Nascimento');
-insert into tbArtistas(nome_Art)values('Legião Urbana');
+insert into tbArtistas(nome_Art)values('Legiao Urbana');
 insert into tbArtistas(nome_Art)values('The Beatles');
 insert into tbArtistas(nome_Art)values('Rita Lee');
 
-insert into tbGravadoras(nome_Grav)values('Polygram');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Vania Gabriela Pereira','Rua A', 2500.00, 'F');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Norberto Pereira Da Silva','Rua B', 300.00, 'M');	
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Olavo Linhares','Rua C', 580.00, 'M');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Paula Da Silva','Rua D', 3000.00, 'F');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Rolando Rocha','Rua E', 2000.00, 'M');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Paulo Sergio Da Silva','Rua F', 1000.00, 'M');
+insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Zilmar Pereira Rocha','Rua G', 6000.00, 'M');
+
 insert into tbGravadoras(nome_Grav)values('EMI');
 insert into tbGravadoras(nome_Grav)values('Som Livre');
 insert into tbGravadoras(nome_Grav)values('Som Music');
+insert into tbGravadoras(nome_Grav)values('Polygram');
 
 insert into tbCategorias(nome_Cat)values('MPB');
 insert into tbCategorias(nome_Cat)values('Trilha Sonora');
@@ -123,78 +132,92 @@ insert into tbCategorias(nome_Cat)values('Rock Nacional');
 insert into tbEstados(sigla_Est, nome_Est)values('SP', 'Sao Paulo');
 insert into tbEstados(sigla_Est, nome_Est)values('MG','Minas Gerais');
 insert into tbEstados(sigla_Est, nome_Est)values('RJ','Rio de Janeiro');
+insert into tbEstados(sigla_Est, nome_Est)values('ES','Espirito Santo');
 
-insert into tbCidades(sigla_Est, nome_Cid)values('SP', 'Sao Paulo');
-insert into tbCidades(sigla_Est, nome_Cid)values('SP','Sorocaba');
-insert into tbCidades(sigla_Est, nome_Cid)values('SP','Jundiai');
-insert into tbCidades(sigla_Est, nome_Cid)values('SP', 'Americana');
-insert into tbCidades(sigla_Est, nome_Cid)values('SP','Araraquara');
-insert into tbCidades(sigla_Est, nome_Cid)values('MG','Ouro Preto');
-insert into tbCidades(sigla_Est, nome_Cid)values('ES','Cachoeira do Itapemirim');
+insert into tbCidades(nome_Cid, sigla_Est)values('Sao Paulo','SP');
+insert into tbCidades(nome_Cid, sigla_Est)values('Sorocaba', 'SP');
+insert into tbCidades(nome_Cid, sigla_Est)values('Jundiai', 'SP');
+insert into tbCidades(nome_Cid, sigla_Est)values('Americana', 'SP');
+insert into tbCidades(nome_Cid, sigla_Est)values('Araraquara', 'SP');
+insert into tbCidades(nome_Cid, sigla_Est)values('Ouro Preto', 'MG');
+insert into tbCidades(nome_Cid, sigla_Est)values('Cachoeira do Itapemirim', 'ES');
 
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(1, 'Jose Nogueira', 'Rua A', 1500.00, 'M');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(1, 'Angelo Pereira','Rua B', 2000.00, 'M');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(1, 'Alem Mar Paranhos','Rua C', 1500.00, 'M');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(1, 'Catarina  Souza', 'Rua D', 829.00, 'F');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(1, 'Vagner Costa','Rua E', 950.00, 'M');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(2, 'Antenor Da Costa','Rua F', 1582.00, 'M');	
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(2, 'Maria Amelia De Souza','Rua G', 1152.00, 'F');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(2, 'Paulo Roberto Silva','Rua H', 3250.00, 'M');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(3, 'Fatima Souza','Rua I', 1632.00, 'F');
-insert into tbClientes(cod_Cid, nome_Cli, end_Cli, renda_Cli, sexo_Cli)values(3, 'Joel Da Rocha','Rua J', 2000.00, 'M');
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Jose Nogueira', 'Rua A', 1500.00, 'M', 1);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Angelo Pereira','Rua B', 2000.00, 'M', 1);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Alem Mar Paranhos','Rua C', 1500.00, 'M',1);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Catarina  Souza', 'Rua D', 829.00, 'F',1);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Vagner Costa','Rua E', 950.00, 'M',1);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Antenor Da Costa','Rua F', 1582.00, 'M',2);	
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Maria Amelia De Souza','Rua G', 1152.00, 'F',2);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Paulo Roberto Silva','Rua H', 3250.00, 'M',2);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Fatima Souza','Rua I', 1632.00, 'F',3);
+insert into tbClientes(nome_Cli, end_Cli, renda_Cli, sexo_Cli, cod_Cid)values('Joel Da Rocha','Rua J', 2000.00, 'M',3);
 
-insert into tbConjuge(cod_Cli, nome_Conj, renda_Cli, sexo_Cli)values(1, 'Carla Nogueira', 2500.00, 'F');	
-insert into tbConjuge(cod_Cli, nome_Conj, renda_Cli, sexo_Cli)values(2, 'Emilia Pereira', 5500.00, 'F');
-insert into tbConjuge(cod_Cli, nome_Conj, renda_Cli, sexo_Cli)values(6, 'Altiva Da Costa', 3000.00, 'F');
-insert into tbConjuge(cod_Cli, nome_Conj, renda_Cli, sexo_Cli)values(7, 'Carlos De Souza', 3250.00, 'M');
+insert into tbConjuge(nome_Conj, renda_Conj, sexo_Conj,cod_Cli)values('Carla Nogueira', 2500.00, 'F',1);	
+insert into tbConjuge(nome_Conj, renda_Conj, sexo_Conj,cod_Cli)values('Emilia Pereira', 5500.00, 'F',2);
+insert into tbConjuge(nome_Conj, renda_Conj, sexo_Conj,cod_Cli)values('Altiva Da Costa', 3000.00, 'F',6);
+insert into tbConjuge(nome_Conj, renda_Conj, sexo_Conj,cod_Cli)values('Carlos De Souza', 3250.00, 'M',7);
 
-insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Vania Gabriela Pereira','Rua A', 2500.00, 'F');
-insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Norberto Pereira Da Silva','Rua B', 300.00, 'M');	
-insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Olavo Linhares','Rua C', 580.00, 'M');
-insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Paula Da Silva','Rua D', 3000.00, 'F');
-insert into tbFuncionarios(nome_Func, end_Func, sal_Func, sexo_Func)values('Rolando Rocha','Rua E', 2000.00, 'M');
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Ana Pereira', 'F',1);
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Roberto Pereira', 'M',1);	
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Celso Pereira', 'M',1);
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Brisa Linhares','F',3);
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Mari Sol Linhares','F',3);
+insert into tbDependentes(nome_Dep, sexo_Dep,cod_Func)values('Sonia Da Silva','F',4);
 
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(1, 'Ana Pereira', 'F');
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(1, 'Roberto Pereira', 'M');	
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(1, 'Celso Pereira', 'M');
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(3, 'Brisa Linhares','F');
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(3, 'Mari Sol Linhares','F');
-insert into tbDependentes(cod_Func, nome_Dep, sexo_Cli)values(4, 'Sonia Da Silva','F');
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Tribalistas', 30.00, 1500,1, 1);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Tropicalia', 50.00, 500,1, 2);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Aquele Abraco',50.00, 600,1, 1);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Refazenda', 60.00, 1000,1, 2);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Totalmente Demais', 50.00, 2000,1, 3);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Travessia', 55.00, 500,1, 3);	
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Courage', 30.00, 200,1, 2);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Legiao Urbana', 20.00, 100,4, 3);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('The Beatles', 30.00, 300,3, 2);
+insert into tbTitulos(nome_CD, val_CD, QTD_ESTQ, cod_Cat, cod_Grav)values('Rita Lee', 30.00, 500,4, 1);
 
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 1, 'Tribalistas', 30.00, 1500);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Tropicalia', 50.00, 500);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 1, 'Aquele Abraco',50.00, 600);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Refazenda', 60.00, 1000);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 3, 'Totalmente Demais', 50.00, 2000);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 3, 'Travessia', 55.00, 500);	
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(1, 2, 'Courage', 30.00, 200);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(4, 3, 'Legiao Urbana', 20.00, 100);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(3, 2, 'The Beatles', 30.00, 300);
-insert into tbTitulos(cod_Cat, cod_Grav, nome_CD, val_CD, QTD_ESTQ)values(4, 1, 'Rita Lee', 30.00, 500);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/05/02', 1500.00, 1, 2);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/05/02', 50.00, 3, 4);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/06/02', 100.00, 4, 7);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/02/03', 200.00, 1, 4);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 300.00, 7, 5);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 100.00, 4, 4);	
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 50.00, 5, 5);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 50.00, 8, 2);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 2000.00, 2, 2);
+insert into tbPedidos(data_Ped, val_Ped,cod_Cli, cod_Func)values('02/03/03', 3000.00, 7, 1);
 
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(1, 2, '02/05/02', 1500);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(3, 4, '02/05/02', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(4, 7, '02/06/02', 100.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(1, 4, '02/02/03', 200.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(7, 5, '02/03/03', 300.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(4, 4, '02/03/03', 100.00);	
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(5, 5, '02/02/03', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(8, 2, '02/02/03', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(2, 2, '02/02/03', 2000.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(7, 1, '02/02/03', 3000.00);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 30.00, 1, 1);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(3, 20.00, 1, 2);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(1, 50.00, 2, 1);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 30.00, 2, 3);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 40.00, 3, 1);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(3, 20.00, 4, 2);	
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 25.00, 5, 1);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(3, 30.00, 6, 2);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(1, 35.00, 6, 3);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 55.00, 7, 4);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(4, 60.00, 8, 1);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(3, 15.00, 9, 2);
+insert into tbTitulos_pedido(QTD_CD, val_CD, num_Ped, cod_Tit)values(2, 15.00, 10, 7);
 
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(1, 2, '02/05/02', 1500);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(3, 4, '02/05/02', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(4, 7, '02/06/02', 100.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(1, 4, '02/02/03', 200.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(7, 5, '02/03/03', 300.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(4, 4, '02/03/03', 100.00);	
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(5, 5, '02/02/03', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(8, 2, '02/02/03', 50.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(2, 2, '02/02/03', 2000.00);
-insert into tbPedidos(cod_Cid, cod_Func, data_Ped, val_Ped)values(7, 1, '02/02/03', 3000.00);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(1,1);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(2,2);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(3,2);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(4,2);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(5,3);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(6,4);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(7,4);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(8,5);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(9,6);
+insert into tbTitulos_Artista(cod_Tit, cod_Art)values(10,7);
 
 
+select * from tbArtistas order by cod_Art asc;
+select * from tbGravadoras order by cod_Grav asc;
+select * from tbCategorias order by cod_Cat asc;
+select * from tbEstados order by sigla_Est desc limit 3;
+select cod_cid, nome_cid,sigla_Est from tbCidades;
 
 -- desc tbArtistas;
 -- desc tbFuncionarios;
@@ -226,48 +249,55 @@ select * from tbTitulos_pedido;
 select * from tbTitulos_Artista;
 
 
-Laboratório
-
- Utilizando o banco de dados DB_CDS: 
 
 
- 1.Selecione o nome dos CDs e o nome da gravadora de cada CD.
+
+-- Laboratório
+
+-- Utilizando o banco de dados DB_CDS: 
+
+
+--  1.Selecione o nome dos CDs e o nome da gravadora de cada CD.
 
 
 select nome_CD as 'Nome do CD', nome_Grav as 'Nome da gravadora' from tbTitulos as tit inner join tbGravadoras as grav on tit.cod_Tit = grav.cod_Grav;
 
 
 
- 2.Selecione o nome dos CDs e o nome da categoria de cada CD. 
+ -- 2.Selecione o nome dos CDs e o nome da categoria de cada CD. 
 
 
 
- 3.Selecione o nome dos CDs, o nome das gravadoras de cada CD e o nome da categoria de cada CD.
+ -- 3.Selecione o nome dos CDs, o nome das gravadoras de cada CD e o nome da categoria de cada CD.
 
 
 
- 4.Selecione  o  nome  dos  clientes  e  os  títulos  dos  CDs vendidos  em  cada  pedido  que  o cliente fez.
+ -- 4.Selecione  o  nome  dos  clientes  e  os  títulos  dos  CDs vendidos  em  cada  pedido  que  o cliente fez.
+
+select  cli.nome from tbPedidos on ped.cod_Func = func.cod_Func inner join tbClientes as cli on ped.cod_Cli = cli.cod_Cli
 
 
 
- 5.Selecione  o  nome  do  funcionário,  número,  data  e  valor   dos  pedidos  que  este funcionário registrou,
-  além do nome do cliente que está fazendo o pedido.
+--  5.Selecione  o  nome  do  funcionário,  número,  data  e  valor   dos  pedidos  que  este funcionário registrou,
+--   além do nome do cliente que está fazendo o pedido.
 
 
 
-6.Selecione  o  nome  dos  funcionários  e  o  nome  de  todos  os  dependentes  de  cada funcionário. 
+-- 6.Selecione  o  nome  dos  funcionários  e  o  nome  de  todos  os  dependentes  de  cada funcionário. 
 
 
 
-7.Selecione o nome dos clientes e o nome dos cônjuges de cada cliente.  
+-- 7.Selecione o nome dos clientes e o nome dos cônjuges de cada cliente.  
 
 
 
-8.Selecione  o  nome  de  todos  os  clientes.  Se  estes  possuem  cônjuges,  mostrar  os  nomes 
-de seus cônjuges também.
+-- 8.Selecione  o  nome  de  todos  os  clientes.  Se  estes  possuem  cônjuges,  mostrar  os  nomes 
+-- de seus cônjuges também.
 
 
 
-9.Selecione  nome  do  cliente,  nome  do  cônjuge,  número do  pedido  que  cada  cliente  fez, 
-valor de cada pedido que cada cliente fez e código do funcionário que atendeu a cada pedido. 
+-- 9.Selecione  nome  do  cliente,  nome  do  cônjuge,  número do  pedido  que  cada  cliente  fez, 
+-- valor de cada pedido que cada cliente fez e código do funcionário que atendeu a cada pedido. 
 
+select cli.nome, conj.nome, numero, valor from tbPedidos as ped inner join tbClientes as cli on ped.cod_Cli = cli.cod_Cli
+right join tbConjuge as conj on ped.num_Ped = conj.codConj

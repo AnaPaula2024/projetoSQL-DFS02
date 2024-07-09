@@ -95,13 +95,11 @@ cod_Tit int not null,
 foreign key(num_Ped) references tbPedidos(num_Ped),
 foreign key(cod_Tit) references tbTitulos(cod_Tit));
 
-
 create table tbTitulos_Artista(
 cod_Tit int not null, 
 cod_Art int not null, 
 foreign key(cod_Tit) references tbTitulos(cod_Tit),
 foreign key(cod_Art) references tbArtistas(cod_Art));
-
 
 insert into tbArtistas(nome_Art)values
 ('Marisa Monte'),
@@ -126,7 +124,6 @@ insert into tbGravadoras(nome_Grav)values
 ('EMI'),
 ('Som Livre'),
 ('Som Music');
-
 
 insert into tbCategorias(nome_Cat)values
 ('MPB'),
@@ -243,58 +240,17 @@ select num_Ped, cod_Tit, QTD_CD, val_CD from tbTitulos_pedido;
 select * from tbTitulos_Artista order by cod_Tit asc;
 
 
+-- 
 
 
 
 
 
 
--- Laboratório
-
--- Utilizando o banco de dados DB_CDS: 
-
-
---  1.Selecione o nome dos CDs e o nome da gravadora de cada CD.
-
-
-select nome_CD as 'Nome do CD', nome_Grav as 'Nome da gravadora' from tbTitulos as tit inner join tbGravadoras as grav on tit.cod_Tit = grav.cod_Grav;
 
 
 
- -- 2.Selecione o nome dos CDs e o nome da categoria de cada CD. 
 
 
 
- -- 3.Selecione o nome dos CDs, o nome das gravadoras de cada CD e o nome da categoria de cada CD.
 
-
-
- -- 4.Selecione  o  nome  dos  clientes  e  os  títulos  dos  CDs vendidos  em  cada  pedido  que  o cliente fez.
-
--- select  cli.nome from tbPedidos on ped.cod_Func = func.cod_Func inner join tbClientes as cli on ped.cod_Cli = cli.cod_Cli
-
-
-
---  5.Selecione  o  nome  do  funcionário,  número,  data  e  valor   dos  pedidos  que  este funcionário registrou,
---   além do nome do cliente que está fazendo o pedido.
-
-
-
--- 6.Selecione  o  nome  dos  funcionários  e  o  nome  de  todos  os  dependentes  de  cada funcionário. 
-
-
-
--- 7.Selecione o nome dos clientes e o nome dos cônjuges de cada cliente.  
-
-
-
--- 8.Selecione  o  nome  de  todos  os  clientes.  Se  estes  possuem  cônjuges,  mostrar  os  nomes 
--- de seus cônjuges também.
-
-
-
--- 9.Selecione  nome  do  cliente,  nome  do  cônjuge,  número do  pedido  que  cada  cliente  fez, 
--- valor de cada pedido que cada cliente fez e código do funcionário que atendeu a cada pedido. 
-
--- select cli.nome, conj.nome, numero, valor from tbPedidos as ped inner join tbClientes as cli on ped.cod_Cli = cli.cod_Cli
--- right join tbConjuge as conj on ped.num_Ped = conj.codConj

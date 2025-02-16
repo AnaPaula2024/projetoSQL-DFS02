@@ -42,37 +42,37 @@ Para executar os scripts, você precisará de:
   📘 Exercícios extraídos de um material didático sobre SQL, cobrindo consultas básicas e avançadas.
 
 - **DB_CDS.sql**  
-  🎵 Banco de dados para gerenciamento de uma loja de CDs, incluindo tabelas para artistas, álbuns e vendas.
+  🎵 Banco de dados para uma loja de CDs, abrangendo artistas, gravadoras, clientes, pedidos e estoque.
 
 - **dbBarbearia.sql**  
-  💈 Simulação de um banco para um sistema de agendamentos de serviços em uma barbearia.
+  💈 Banco de dados para gerenciamento de produtos utilizados em uma barbearia, permitindo inserção, atualização e consulta de preços.
 
 - **dbBoteco.sql**  
-  🍻 Estrutura de um banco de dados para um bar, contendo informações sobre pedidos, clientes e produtos.
+  🍻 Banco de dados para um bar, contendo informações sobre funcionários, incluindo nome, contato e endereço.
 
 - **dbClinica.sql**  
-  🏥 Banco de dados de uma clínica médica, incluindo pacientes, médicos e consultas.
+  🏥 Banco de dados para uma clínica médica, contendo informações sobre pacientes, médicos, consultas e receitas médicas.
 
 - **dbConstrutora.sql**  
-  🏗️ Estrutura de um banco para uma construtora, gerenciando obras, materiais e funcionários.
+  🏗️ Banco de dados para um sistema de construtora, incluindo controle de funcionários, fornecedores, clientes, produtos e vendas.
 
 - **dbEscola.sql**  
-  🎓 Banco de dados para uma escola, com alunos, professores e disciplinas.
+  🎓 Banco de dados para uma escola, incluindo gestão de alunos, professores, cursos, turmas e matrículas.
 
 - **dbLivraria.sql**  
-  📚 Sistema de gerenciamento de uma livraria, incluindo catálogo de livros e vendas.
+  📚 Banco de dados para uma livraria, gerenciando catálogo de livros, autores, clientes e vendas, incluindo registros de estoque e itens vendidos.
 
 - **dbLoja.sql**  
-  🛍️ Modelo de banco para um e-commerce ou loja física.
+  🛍️ Banco de dados para um e-commerce ou loja física, incluindo gestão de funcionários, clientes, fornecedores, produtos e vendas.
 
 - **dbProdutos.sql**  
-  📦 Banco com estrutura voltada para controle de estoque e produtos.
+  📦 Banco de dados para controle de estoque e produtos, incluindo gerenciamento de preços, categorias e quantidades.
 
 - **dbConsultorio.sql**  
-  🦷 Sistema de banco de dados para um consultório odontológico.
+  🦷 Sistema de banco de dados para um consultório de saúde.
 
 - **script_dbGabyBolos.sql**  
-  🎂 Script SQL para gerenciamento de pedidos em uma confeitaria.
+  🍰 Estrutura inicial do banco de dados para uma confeitaria.
 
 ---
 
